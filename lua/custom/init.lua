@@ -38,7 +38,55 @@ local hooks = require "core.hooks"
 --    }
 -- end)
 
+hooks.add("install_plugins", function(use)
+  use {
+     "davidcelis/vim-ariake-dark"
+   }
+
+   use {
+     "vim-crystal/vim-crystal"
+   }
+
+   use {
+     "christoomey/vim-tmux-navigator"
+   }
+
+   use {
+     "vim-ruby/vim-ruby"
+   }
+
+   use {
+     "sudormrfbin/cheatsheet.nvim",
+
+     requires = {
+       {'nvim-telescope/telescope.nvim'},
+       {'nvim-lua/popup.nvim'},
+       {'nvim-lua/plenary.nvim'},
+     }
+   }
+
+   use {
+     "~/src/fernandes.nvim"
+   }
+end)
+
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"
 -- then source it with
 
 -- require "custom.plugins.mkdir"
+hooks.add("setup_mappings", function(map)
+  map("n", "<leader>gb", "<Cmd>BufferLinePick<CR>", opt)
+  map("n", "<leader>g1", "<Cmd>BufferLineGoToBuffer 1<CR>", opt)
+  map("n", "<leader>g2", "<Cmd>BufferLineGoToBuffer 2<CR>", opt)
+  map("n", "<leader>g3", "<Cmd>BufferLineGoToBuffer 3<CR>", opt)
+  map("n", "<leader>g4", "<Cmd>BufferLineGoToBuffer 4<CR>", opt)
+  map("n", "<leader>g5", "<Cmd>BufferLineGoToBuffer 5<CR>", opt)
+  map("n", "<leader>g6", "<Cmd>BufferLineGoToBuffer 6<CR>", opt)
+end)
+
+require('fernandes').setup()
+
+-- vim.cmd("hi Normal guibg=#1f212a")
+-- vim.cmd("hi EndOfBuffer guibg=#1f212a")
+-- vim.cmd("hi CursorLine guibg=#222530")
+-- 

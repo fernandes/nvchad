@@ -15,12 +15,16 @@ M.options, M.ui, M.mappings, M.plugins = {}, {}, {}, {}
 --    relativenumber = true,
 -- }
 
--- M.ui = {
---   theme = "nord"
--- }
+M.ui = {
+  hl_override = "custom.highlights",
+  -- theme = "fernandes"
+}
 
 -- NvChad included plugin options & overrides
 M.plugins = {
+   status = {
+     cheatsheet = true,
+   },
    options = {
       --   lspconfig = {
       --    path of file containing setups of different lsps (ex : "custom.plugins.lspconfig"), read the docs for more info
